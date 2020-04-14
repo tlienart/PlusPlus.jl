@@ -12,6 +12,8 @@ using Test
     @test x ++ nothing == vcat(x, nothing)
     @test nothing ++ x == vcat(nothing, x)
     @test 2 ++ 2 == vcat(2, 2)
+
+    @test x ++ x ++ x == vcat(x, x, x)
 end
 
 @testset "strings" begin
@@ -26,4 +28,6 @@ end
     @test 'a' ++ 'b' == "ab"
     @test "hell" ++ 'o' == "hello"
     @test 'h' ++ "ello" == "hello"
+
+    @test "a" ++ 'b' ++ "he" == "abhe"
 end
