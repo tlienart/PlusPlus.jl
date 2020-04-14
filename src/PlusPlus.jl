@@ -3,9 +3,10 @@ module PlusPlus
 export (++)
 
 (++)(x::AbstractVector, y::AbstractVector) = vcat(x, y)
-(++)(x::AbstractString, y::AbstractString) = x * y
+# fallback
+(++)(x, y) = vcat(x, y)
 
-(++)(x, ::Nothing) = x
-(++)(::Nothing, x) = x
+const ASC = Union{AbstractString, AbstractChar}
+(++)(x::ASC, y::ASC) = x * y
 
 end # module

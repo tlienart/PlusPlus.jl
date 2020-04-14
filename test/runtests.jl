@@ -9,8 +9,9 @@ using Test
     @test z == vcat(x, y)
     @test z isa AbstractVector
 
-    @test x ++ nothing === x
-    @test nothing ++ x === x
+    @test x ++ nothing == vcat(x, nothing)
+    @test nothing ++ x == vcat(nothing, x)
+    @test 2 ++ 2 == vcat(2, 2)
 end
 
 @testset "strings" begin
@@ -21,4 +22,8 @@ end
     @test z == x * y
 
     @test x ++ "" == x
+
+    @test 'a' ++ 'b' == "ab"
+    @test "hell" ++ 'o' == "hello"
+    @test 'h' ++ "ello" == "hello"
 end
