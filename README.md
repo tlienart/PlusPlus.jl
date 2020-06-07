@@ -15,9 +15,20 @@ julia> [1 2; 3 4] ++ [2 1]
  1  2
  3  4
  2  1
+ 
+ julia> (1, 2, 3) ++ (4, 5)
+(1, 2, 3, 4, 5)
+
+julia> (1, 2, 3) ++ [4, 5]
+5-element Array{Int64,1}:
+ 1
+ 2
+ 3
+ 4
+ 5
 ```
 
-Generally `++` is the same as `vcat` for anything numeric and the same as `*` for anything string or char.
+Generally `++` is the same as `vcat` for anything arraylike, efficiently splats tuples into a bigger tuple and is the same as `*` for anything string or char.
 
 ## Contributors
 
