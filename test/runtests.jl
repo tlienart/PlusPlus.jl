@@ -31,3 +31,10 @@ end
 
     @test "a" ++ 'b' ++ "he" == "abhe"
 end
+
+@testset "tuples" begin
+    @test ++(1) == 1
+    @test (1, 2, 3) ++ (4, 5) == (1, 2, 3, 4, 5)
+    @test (1,2,3) ++ (4,5) ++ ("hi", "bye") == (1, 2, 3, 4, 5, "hi", "bye")
+    @test (1, 2, 3) ++ [4, 5] == [1, 2, 3, 4, 5]
+end
