@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- META -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ovid and HG Wells">
+  <title>PlusPlus.jl</title>
+
+  <link rel="icon" type="image/png"  href="/assets/favicon.ico">
+
+  <!-- CSS -->
+   <link rel="stylesheet" href="/libs/katex/katex.min.css">
+     
+   <link rel="stylesheet" href="/libs/highlight/styles/atom-one-dark.css">
+   
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <style>.bg-primary {
+  background-color: cornflowerblue !important;
+}
+
+a {
+  color: #2669DD;
+}
+
+a:hover {
+  color: teal;
+}
+
+.section-bg-color {
+  background-color: #f6f8fa;
+}
+
+footer a {
+  color: cornflowerblue;
+}
+
+
+.jumbotron {
+  width: 80%;
+}
+
+header {
+  margin-top: 100px !important;
+}
+
+
+
+.jumbotron {
+  background-image: url("assets/diagonal-lines.svg");
+  background-repeat: repeat;
+}
+
+
+/* CODE ADJUSTMENTS */
+
+pre code.hljs {
+  border-radius: 10px;
+}
+
+pre code.hljs.plaintext {
+  margin-left: 15px;
+}
+</style>
+  <link rel="stylesheet" href="/css/custom.css">
+
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+  <div class="container">
+    <span class="navbar-brand">
+      
+        <img src="/assets/logo.svg" class="img-fluid" style="max-height:     20px;
+padding-right:  10px;
+" alt="Logo"/>
+      
+      <a href="#page-top">PlusPlus.jl</a>
+      
+    </span>
+    <input type="checkbox" id="navbar-toggler-cbox" class="d-none" />
+    <label for="navbar-toggler-cbox" class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </label>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#showing_code">Showing Code</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#deployment">Deployment</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <header class="text-white text-center">
+  
+    <div class="jumbotron container bg-primary">
+  
+    <h1>PlusPlus.jl</h1>
+    <div class="lead">A simple package to generalise vcat.
+</div>
+    
+      <a class="github-button" href="https://github.com/tlienart/PkgPage.jl" data-size="large" aria-label="View PlusPlus.jl on GitHub">View on GitHub</a>
+    
+    
+      <a class="github-button" href="https://github.com/tlienart/PkgPage.jl" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star PlusPlus.jl on GitHub">Star</a>
+    
+  </div>
+</header>
+
+  <!-- Content appended here -->
+<div class="franklin-content"><section id="about" class="scrollspy">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h2>
+          About this Package
+        </h2>
+
+<div class="lead">PkgPage.jl is based upon <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and makes it easy to create a beautiful landing page for a package in less than 10 minutes.</div>
+<p>Say something else \(\sin^2(x)+\cos^2(x)=1\).</p>
+\[ \sin^2(x)+\cos^2(x)=1 \]
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="showing_code" class="scrollspy section-bg-color">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h2>
+          Showing Code
+        </h2>
+
+<pre><code class="language-julia">using DataFrames
+using PlusPlus
+df = DataFrame(A = 1:4, B = ["M", "F", "F", "M"])
+df2 = DataFrame(A = 1:4, B = ["M", "F", "F", "M"])
+df ++ df2</code></pre><pre><code class="plaintext">8×2 DataFrames.DataFrame
+│ Row │ A     │ B      │
+│     │ Int64 │ String │
+├─────┼───────┼────────┤
+│ 1   │ 1     │ M      │
+│ 2   │ 2     │ F      │
+│ 3   │ 3     │ F      │
+│ 4   │ 4     │ M      │
+│ 5   │ 1     │ M      │
+│ 6   │ 2     │ F      │
+│ 7   │ 3     │ F      │
+│ 8   │ 4     │ M      │</code></pre>
+<p>You can control the indentation and appearance of the output block in the <code>config.md</code> too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="deployment" class="scrollspy">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h2>
+          Deployment
+        </h2>
+
+<div class="lead">Make your page available online easily by leveraging GitHub Actions and GitHub Pages.</div>
+<p>By following these instructions, the content of the rendered website will be copied to a <code>gh-pages</code> branch where it will be deployed by GitHub. If you would like to deploy the page with your own URL or using something else than GitHub, have a look at the specific instructions further on.</p>
+<p><strong>Adjust DeployPage</strong>: start by checking the <code>.github/workflows/DeployPage.yml</code> in particular:</p>
+<ul>
+<li><p>if you want to use Python or matplotlib, uncomment the relevant lines</p>
+</li>
+<li><p>in the <code>run</code> block ensure that</p>
+<ul>
+<li><p><code>NodeJS</code> and <code>PkgPage</code> are added,</p>
+</li>
+<li><p>any packages that your page might rely on are added,</p>
+</li>
+<li><p>the <code>optimize</code> call has the appropriate <code>input</code> and <code>output</code> path &#40;if you&#39;re in the default setting, leave as is&#41;.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Keys</strong>: in order to have your page be built and deployed on GitHub, you will need to generate a keypair and add it to the GitHub repo. To do so:</p>
+<ol>
+<li><p>run in your terminal <code>ssh-keygen -N &quot;&quot; -f franklin</code>,</p>
+</li>
+<li><p>copy the entire content of the generated <code>franklin</code> file and put it as a new secret named <code>FRANKLIN_PRIV</code> on <a href="https://github.com/USERNAME/PACKAGE.jl/settings/secrets/new">https://github.com/USERNAME/PACKAGE.jl/settings/secrets/new</a>,</p>
+</li>
+<li><p>copy the entire content of the generated <code>franklin.pub</code> file and put it as a new deploy key named <code>FRANKLIN_PUB</code> on <a href="https://github.com/USERNAME/PACKAGE.jl/settings/keys">https://github.com/USERNAME/PACKAGE.jl/settings/keys</a> with <code>read/write</code> access,</p>
+</li>
+<li><p>remove both files.</p>
+</li>
+</ol>
+<p>Whenever the <code>master</code> branch of your package gets updated, the  build process will be triggered and your page updated. <strong>That&#39;s basically it</strong>.</p>
+<div class="alert alert-info" role="alert">
+ In order to avoid having GitHub mark your repo as a CSS/HTML repo instead of a Julia one, you will want to tell it to ignore the <code>page/</code> folder &#40;or whatever you named the folder&#41; for the language statistics. To do so, add a file <code>.gitattributes</code> in your repo with <code>page/* linguist-vendored</code> such as <a href="https://github.com/tlienart/PkgPage.jl/blob/master/.gitattributes">the one we use</a>. </div>
+<p><strong>Avoiding clashes with Documenter.jl</strong>: if you already use <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> you might want your page to be deployed in a specific folder of <code>gh-pages</code> as Documenter also generates files in <code>gh-pages</code>.</p>
+<div class="alert alert-info" role="alert">
+ This will typically not be necessary as the names created by PkgPage and Documenter don&#39;t clash, but you might still prefer to avoid mixing the two &#40;in which case, read on&#41;. </div>
+<p>you can do so in two steps:</p>
+<ol>
+<li><p>change the <code>run</code> part of <code>DeployPage.yml</code> by specifying the <code>output</code> keyword argument  in <code>PkgPage.optimize</code> for instance: <code>PkgPage.optimize&#40;input&#61;&quot;page&quot;, output&#61;&quot;page&quot;&#41;</code>,</p>
+</li>
+<li><p>change the <code>prepath</code> in <code>config.md</code> to reflect that the base URL will contain that additional folder, for instance <code>@def prepath &#61; &quot;YourPackage.jl/page&quot;</code>.</p>
+</li>
+</ol>
+<p><strong>Use your own URL</strong>: you can usually get host services like Netlify to deploy a specific branch of a GitHub repo, do make sure to set <code>@def prepath &#61; &quot;&quot;</code> in your <code>config.md</code> though.</p>
+<p>If you want to do the deployment without GitHub actions then you will need to:</p>
+<ul>
+<li><p>ensure you have <code>purgecss</code> and <code>highlights</code> installed and available to <code>NodeJS</code>, the simplest way to do this is to install them via <code>NodeJS</code> with</p>
+</li>
+</ul>
+<pre><code class="language-julia">using NodeJS;
+run(`$(npm_cmd()) install highlight.js`);
+run(`$(npm_cmd()) install purgecss`);</code></pre> <br/>
+<ul>
+<li><p>run <code>PkgPage.optimize&#40;input&#61;&quot;page&quot;, output&#61;&quot;&quot;&#41;</code> &#40;adapting <code>input</code> as required&#41;</p>
+</li>
+<li><p>place the content of <code>page/__site</code> wherever your server requires it.</p>
+</li>
+</ul>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="py-5 bg-dark">
+  <div class="container">
+    <p class="m-0 text-center text-white">&copy; Ovid and HG Wells. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and <a href="https://github.com/tlienart/PkgPage.jl">PkgPage.jl</a>.</p>
+  </div>
+</footer>
+</div><!-- CONTENT ENDS HERE -->
+  
+      <script src="/libs/katex/katex.min.js"></script>
+<script src="/libs/katex/auto-render.min.js"></script>
+<script>renderMathInElement(document.body)</script>
+
+  
+  
+      <script src="/libs/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
+
+  
+  <script src="/libs/simple-scrollspy.min.js"></script>
+  <script>
+  window.onload = function () {
+    scrollSpy('#navbarResponsive', {
+      sectionClass: '.scrollspy',
+      menuActiveTarget: '.nav-link',
+      offset: 100
+    })
+  }
+  </script>
+  </body>
+</html>
